@@ -1,0 +1,11 @@
+<% include ./partials/header %>
+<h1>Welcome to my beautiful blog site</h1>
+<% for(i=0;i<blogs.length;i++) { %>
+	<p><%= blogs[i].title %></p>
+	<p><%= blogs[i].author %></p>
+	<img src="<%= blogs[i].imageUrl%>">
+	<p><%= blogs[i].post %></p>
+	<a href="/blogs/<%=blogs[i]._id %>">See More</a>
+	<a href="/blogs/<%=blogs[i]._id %>/edit">Edit</a>
+<% } %>
+<% include ./partials/footer %>
