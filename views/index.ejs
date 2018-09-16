@@ -1,11 +1,13 @@
 <% include ./partials/header %>
-<h1>Welcome to my beautiful blog site</h1>
-<% for(i=0;i<blogs.length;i++) { %>
-	<p><%= blogs[i].title %></p>
-	<p><%= blogs[i].author %></p>
-	<img src="<%= blogs[i].imageUrl%>">
-	<p><%= blogs[i].post %></p>
-	<a href="/blogs/<%=blogs[i]._id %>">See More</a>
-	<a href="/blogs/<%=blogs[i]._id %>/edit">Edit</a>
+	<h1>Blah Blah Blogs</h1>
+	<% for(i=0;i<blogs.length;i++) { %>
+		<div class="ui main text container segment indexPage">
+			<h4><%= blogs[i].title %></h4>
+			<p><%= blogs[i].author %></p>
+			<img class="blogImage" src="<%= blogs[i].imageUrl%>">
+			<p><%= blogs[i].post %></p>
+			<a class="small ui button" href="/blogs/<%=blogs[i]._id %>">See More</a>
+			<a class="small ui button" href="/blogs/<%=blogs[i]._id %>/edit">Edit</a>
+		</div>
 <% } %>
 <% include ./partials/footer %>

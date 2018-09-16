@@ -1,10 +1,17 @@
 <% include ./partials/header %>
-<h1>Create a blog</h1>
-<form action="/blogs/" method="POST">
-<input type="text" name="blogTitle" id="blogTitle" value="Enter Title"/>
-<input type="text" name="blogAuthor" id="blogAuthor" value="Enter Author"/>
-<input type="text" name="blogImage" id="blogImage" value="Enter Image url"/>
-<input type="text" name="blogPost" id="blogPost" value="Enter Post"/>
-<input type="submit" value="Submit"/>
-</form>
+	<h1 class="ui huge header">Create a New Blog Post</h1>
+	<div class ="ui main text container segment newPage">
+	<form class="ui form action="/blogs/" method="POST">
+		<% /*the values for the name attributes are using body-parser syntax to create all the values from the inputs for the form inside an object body*/ %>
+		<label>Title</label>
+		<input type="text" name="blog[title]" id="blogTitle" placeholder="Enter Title"/>
+		<label>Author</label>
+		<input type="text" name="blog[author]" id="blogAuthor" placeholder="Enter Author"/>
+		<label>Image</label>
+		<input type="text" name="blog[imageUrl]" id="blogImage" placeholder="Enter Image url"/>
+		<label>Post</label>
+		<textarea  name="blog[post]" id="blogPost"></textarea>
+		<input type="submit" class="small ui button" value="Submit"/>
+	</form>
+</div>
 <% include ./partials/footer %>

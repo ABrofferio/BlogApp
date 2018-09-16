@@ -36,7 +36,6 @@ Blog.find({},function(err, blogItems){
 	if(err){
 	console.log(err)
 	}else{
-//	console.log(blogItems);
 	res.render("index", {blogs:blogItems});
 	}
 })
@@ -49,17 +48,19 @@ res.render("new");
 
 //CREATE
 app.post("/blogs", function(req, res){
+/*
 Blog.create({
 	title:req.body.blogTitle,
         author: req.body.blogAuthor,
         imageUrl: req.body.blogImage,
         post: req.body.blogPost
 	},function(err,blogItem){
+*/
+/* above can be replaced by creating each of the input values as properties of an object in name attribute of input field in views*/
+Blog.create(req.body.blog, function(err, blogItem){
 		if(err){
 			console.log(err);
 		}else{
-//			console.log("created new blog object");
-//			console.log(blogItem);
 			res.redirect("/blogs");
 		}
 })
