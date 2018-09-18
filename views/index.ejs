@@ -5,7 +5,7 @@
 			<h4><%= blogs[i].title %></h4>
 			<p><%= blogs[i].author %></p>
 			<img class="blogImage" src="<%= blogs[i].imageUrl%>">
-			<p><%= blogs[i].post %></p>
+			<p><%- blogs[i].post.substring(0,100) %>...</p>
 			<a class="small ui button" href="/blogs/<%=blogs[i]._id %>">See More</a>
 			<a class="small ui button" href="/blogs/<%=blogs[i]._id %>/edit">Edit</a>
 		</div>
